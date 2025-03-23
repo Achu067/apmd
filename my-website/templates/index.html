@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/recordrtc@5.5.9/RecordRTC.js"></script>
 </head>
 <body>
     <header>
@@ -25,7 +26,7 @@
                 <option value="nl">Dutch</option>
                 <option value="au">Australian English</option>
             </select>
-            <label for="expected-text">Enter Expected_Text:</label>
+            <label for="expected-text">Enter Expected Text:</label>
             <input type="text" id="expected-text" value="hello this is google">
             <button id="correct-grammar">Correct Grammar</button>
             <button id="detect-errors">Detect Errors</button>
