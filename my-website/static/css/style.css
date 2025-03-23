@@ -1,59 +1,61 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    padding: 1em;
 }
 
 .container {
-    background-color: white;
-    padding: 1em;
-    border-radius: 5px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5em;
+header, footer {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
 }
 
-select, input[type="text"] {
+.content {
+    margin-top: 20px;
+}
+
+textarea, input[type="text"] {
     width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
-    padding: 0.5em 1em;
-    margin-right: 0.5em;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
-#results {
-    margin-top: 1em;
-}
-
-#chart {
-    margin-top: 1em;
+#output {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
 }
