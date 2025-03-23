@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronunciation and Grammar Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Pronunciation and Grammar Checker</h1>
+    </header>
+    <main>
+        <div class="container">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="en">English (US)</option>
+                <option value="en-uk">English (UK)</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="ar">Arabic</option>
+                <option value="es">Spanish</option>
+                <option value="nl">Dutch</option>
+                <option value="au">Australian English</option>
+            </select>
+            <label for="expected-text">Enter Expected_Text:</label>
+            <input type="text" id="expected-text" value="hello this is google">
+            <button id="correct-grammar">Correct Grammar</button>
+            <button id="detect-errors">Detect Errors</button>
+            <div id="results">
+                <h2>Results</h2>
+                <p><strong>Original Text:</strong> <span id="original-text">hello this is google</span></p>
+                <p><strong>Recognized Text:</strong> <span id="recognized-text">hello this is google</span></p>
+                <p><strong>Phonetic Transcription:</strong> <span id="phonetic-transcription">HH AH0 L OW1</span></p>
+                <div id="chart">
+                    <h3>Pronunciation Comparison</h3>
+                    <canvas id="pronunciation-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Pronunciation and Grammar Checker</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
