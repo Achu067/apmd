@@ -1,8 +1,8 @@
 const socket = io();
 
-function detectErrors() {
-    const text = document.getElementById('inputText').value;
-    const language = 'en'; // Replace with actual language detection logic
+document.getElementById('correct-grammar').addEventListener('click', () => {
+    const text = document.getElementById('expected-text').value;
+    const language = document.getElementById('language-select').value;
 
     fetch('/correct_grammar', {
         method: 'POST',
@@ -16,7 +16,11 @@ function detectErrors() {
             document.getElementById('output').innerHTML = `<p>Corrected Text: ${data.corrected_text}</p>`;
         })
         .catch(error => console.error('Error:', error));
-}
+});
+
+document.getElementById('detect-errors').addEventListener('click', () => {
+    recordVoice();
+});
 
 function recordVoice() {
     const constraints = { audio: true };
@@ -36,7 +40,7 @@ function recordVoice() {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    socket.emit('detect_errors', { text: data.transcription, language: 'en' });
+                    socket.emit('detect_errors', { text: data.transcription, language: document.getElementById('language-select').value });
                 })
                 .catch(error => console.error('Error:', error));
             });
