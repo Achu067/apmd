@@ -24,7 +24,15 @@ jobs:
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: Run Flask application
+    - name: Run tests
       run: |
         source venv/bin/activate
-        python app.py
+        # Add your test commands here
+        echo "Running tests..."
+
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        heroku git:remote -a your-heroku-app-name
+        git push heroku main
